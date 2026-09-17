@@ -1,0 +1,42 @@
+flowchart TD
+    subgraph ClientLayer["1. Client & Off-Chain Layer"]
+        User["Payer / Client Wallet"]
+        Recipient["Service Provider / Receiver"]
+        Keeper["Autonomous Keeper Bot"]
+    end
+
+    subgraph ProgramAccounts["2. Solana On-Chain Account State (PDAs)"]
+        ChannelState["Channel Account (PDA)<br/>• Seeds: ['channel', payer, recipient, channel_id]<br/>• Zero-Copy Struct<br/>• Nonce, Deposited, Settled, Expiry, Status"]
+        VaultAuth["Vault Authority (PDA)<br/>• Seeds: ['vault_auth', channel_state_key]"]
+        TokenVault["Escrow Token Vault (SPL Token)<br/>• Owner: Vault Authority PDA<br/>• Holds Locked USDC/SPL"]
+        ProtocolConfig["Global Config PDA<br/>• Fee BPS, Protocol Admin, Keeper Bounty"]
+    end
+
+    subgraph SolanaRuntime["3. Solana Program Execution & CPIs"]
+        AnchorProg["Kraków FlashStream Program<br/>(Program ID: KFS1111111111111111111111111111111111111111)"]
+        TokenProgram["SPL Token / Token-2022 Program"]
+        SysvarSig["Ed25519 Program Verify Precompile<br/>(Signature Verification Instruction)"]
+    end
+
+    %% Lifecycle Flows
+    User -->|1. Initialize & Deposit| AnchorProg
+    AnchorProg -->|CPI Transfer| TokenProgram
+    TokenProgram -->|Deposit Tokens| TokenVault
+    AnchorProg -->|Create PDA| ChannelState
+
+    User -.->|2. Stream Signed Vouchers Off-Chain| Recipient
+
+    Recipient -->|3. Cooperative Settle & Close (Signed Vouchers)| AnchorProg
+    AnchorProg -->|Verify Ed25519 Signatures| SysvarSig
+    AnchorProg -->|Disburse Funds (CPI)| TokenProgram
+    TokenProgram -->|Transfer Net Payout| Recipient
+    TokenProgram -->|Refund Remaining| User
+
+    Recipient -->|4. Trigger Unilateral Close (Optimistic)| AnchorProg
+    AnchorProg -->|Start Challenge Window (e.g. 500 Slots)| ChannelState
+
+    User -->|5. Contest Outdated Nonce (Fraud Proof)| AnchorProg
+    AnchorProg -->|Slash Offender & Refund| User
+
+    Keeper -->|6. Finalize Expired Window| AnchorProg
+    AnchorProg -->|Disburse Balance + Keeper Bounty| Keeper
