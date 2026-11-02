@@ -1,0 +1,12 @@
+# Solana Network Configuration
+SOLANA_RPC_URL=https://api.devnet.solana.com
+PROGRAM_ID=WawelEscrow111111111111111111111111111111111
+
+# Enterprise Integrations
+RESEND_API_KEY=re_1234567890abcdef
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+AUDIT_EMAIL_RECIPIENT=treasury-compliance@krakow-nexus.io
+
+# Service Observability
+PORT=8080
+LOG_LEVEL=info

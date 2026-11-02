@@ -1,0 +1,14 @@
++-----------------------------------------------------------------------------------------+
+|                                OPERATIONAL RUNBOOK MATRIX                               |
++--------------------------+----------------------------+---------------------------------+
+| Incident                 | Detection Symptom          | Actionable Recovery Step        |
++--------------------------+----------------------------+---------------------------------+
+| WebSocket Drop           | Logs stop streaming        | Daemon auto-reconnects with     |
+|                          |                            | exponential backoff (1s -> 30s).|
++--------------------------+----------------------------+---------------------------------+
+| Resend Rate Limit        | HTTP 429 in Winston logs   | Outbox queues in memory; retry  |
+|                          |                            | executes with jittered window.  |
++--------------------------+----------------------------+---------------------------------+
+| Disputed Milestone Stagn | State = Disputed > 72h     | PagerDuty alerts arbiter group  |
+|                          |                            | to trigger resolve_dispute().   |
++--------------------------+----------------------------+---------------------------------+

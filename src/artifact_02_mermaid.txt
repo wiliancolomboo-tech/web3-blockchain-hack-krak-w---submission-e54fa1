@@ -1,42 +1,54 @@
 flowchart TD
-    subgraph ClientLayer["1. Client & Off-Chain Layer"]
-        User["Payer / Client Wallet"]
-        Recipient["Service Provider / Receiver"]
-        Keeper["Autonomous Keeper Bot"]
+    subgraph ClientLayer["Enterprise Client & Contributor Layer"]
+        C[Enterprise Client]
+        V[Vendor / Grantee]
     end
 
-    subgraph ProgramAccounts["2. Solana On-Chain Account State (PDAs)"]
-        ChannelState["Channel Account (PDA)<br/>• Seeds: ['channel', payer, recipient, channel_id]<br/>• Zero-Copy Struct<br/>• Nonce, Deposited, Settled, Expiry, Status"]
-        VaultAuth["Vault Authority (PDA)<br/>• Seeds: ['vault_auth', channel_state_key]"]
-        TokenVault["Escrow Token Vault (SPL Token)<br/>• Owner: Vault Authority PDA<br/>• Holds Locked USDC/SPL"]
-        ProtocolConfig["Global Config PDA<br/>• Fee BPS, Protocol Admin, Keeper Bounty"]
+    subgraph SolanaOnChain["Solana Blockchain (Anchor Runtime)"]
+        direction TB
+        Init[Instruction: initialize_escrow]
+        VaultPDA[("Escrow PDA Account
+        - Authority
+        - Recipient
+        - Total Milestones
+        - Completed Milestones
+        - Escrow Bump")]
+        TokenVault[("SPL Token Vault PDA
+        Owned by Escrow PDA")]
+        
+        SubMilestone[Instruction: submit_milestone]
+        ApprMilestone[Instruction: approve_and_release]
+        DispMilestone[Instruction: raise_dispute]
+        RefMilestone[Instruction: resolve_or_refund]
+        
+        Init --> VaultPDA
+        Init --> TokenVault
+        SubMilestone --> VaultPDA
+        ApprMilestone --> VaultPDA
+        ApprMilestone -.->|CPI spl_token::transfer| TokenVault
+        DispMilestone --> VaultPDA
+        RefMilestone --> VaultPDA
     end
 
-    subgraph SolanaRuntime["3. Solana Program Execution & CPIs"]
-        AnchorProg["Kraków FlashStream Program<br/>(Program ID: KFS1111111111111111111111111111111111111111)"]
-        TokenProgram["SPL Token / Token-2022 Program"]
-        SysvarSig["Ed25519 Program Verify Precompile<br/>(Signature Verification Instruction)"]
+    subgraph OffChainEngine["Enterprise Worker & Integration Layer"]
+        Worker[KrakSettle Automation Daemon]
+        RPCSub[Solana WebSocket / PubSub Account Listener]
+        ResendAPI[Resend Transactional Email API]
+        OpsWebhook[Enterprise Discord / Slack Webhook]
     end
 
-    %% Lifecycle Flows
-    User -->|1. Initialize & Deposit| AnchorProg
-    AnchorProg -->|CPI Transfer| TokenProgram
-    TokenProgram -->|Deposit Tokens| TokenVault
-    AnchorProg -->|Create PDA| ChannelState
+    %% State Transitions
+    C -->|1. Initialize Escrow with BPs & Timeouts| Init
+    C -->|2. Deposit SPL Tokens (USDC/USDT)| TokenVault
+    V -->|3. Submit Deliverable URI & Proof Hash| SubMilestone
+    C -->|4. Inspect & Sign Approval| ApprMilestone
+    TokenVault -->|5. Instant Liquidity Transfer| V
+    C -.->|Alternative: Dispute Condition| DispMilestone
 
-    User -.->|2. Stream Signed Vouchers Off-Chain| Recipient
-
-    Recipient -->|3. Cooperative Settle & Close (Signed Vouchers)| AnchorProg
-    AnchorProg -->|Verify Ed25519 Signatures| SysvarSig
-    AnchorProg -->|Disburse Funds (CPI)| TokenProgram
-    TokenProgram -->|Transfer Net Payout| Recipient
-    TokenProgram -->|Refund Remaining| User
-
-    Recipient -->|4. Trigger Unilateral Close (Optimistic)| AnchorProg
-    AnchorProg -->|Start Challenge Window (e.g. 500 Slots)| ChannelState
-
-    User -->|5. Contest Outdated Nonce (Fraud Proof)| AnchorProg
-    AnchorProg -->|Slash Offender & Refund| User
-
-    Keeper -->|6. Finalize Expired Window| AnchorProg
-    AnchorProg -->|Disburse Balance + Keeper Bounty| Keeper
+    %% Off-chain Event Monitoring and Dispatches
+    SolanaOnChain -.->|Emit: MilestoneApprovedEvent| RPCSub
+    RPCSub --> Worker
+    Worker -->|6. Compile Tax Invoice & Notification| ResendAPI
+    Worker -->|7. Telemetry & Audit Log Alert| OpsWebhook
+    ResendAPI -->|Delivered| C
+    ResendAPI -->|Delivered| V

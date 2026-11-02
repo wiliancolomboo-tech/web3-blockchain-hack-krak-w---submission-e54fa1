@@ -1,0 +1,9 @@
+krakow_shield: Zero-MEV Batch Auction Clearing Test Suite
+    ✔ 1. Initializes Market and Program Vaults (312ms)
+    ✔ 2. Opens Discrete Auction Epoch (145ms)
+    ✔ 3. Commits Encrypted Orders for Buyer and Seller (420ms)
+    ✔ 4. Advances Slots and Reveals Valid Orders (3180ms)
+    ✔ 5. Keeper Clears Batch Auction with Uniform Clearing Price (3110ms)
+    ✔ 6. Settles Matched Orders Atomically via CoW Engine (520ms)
+
+  6 passing (7.69s)

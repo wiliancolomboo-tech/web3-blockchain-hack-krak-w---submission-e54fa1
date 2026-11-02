@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  settleguard-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WS_URL=wss://api.devnet.solana.com
+      - PROGRAM_ID=SGrd411111111111111111111111111111111111111
+      - IDL_PATH=/usr/src/app/target/idl/settleguard.json
+      - SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+      - RESEND_API_KEY=re_123456789abcdef
+      - ENTERPRISE_AUDIT_EMAIL=settlements@enterprise.org
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "node -e 'process.exit(0)'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

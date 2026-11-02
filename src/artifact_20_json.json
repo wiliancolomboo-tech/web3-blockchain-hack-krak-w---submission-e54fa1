@@ -1,0 +1,9 @@
+{
+  "level": "info",
+  "service": "streamguard-watcher",
+  "status": "healthy",
+  "cluster": "devnet",
+  "ws_active": true,
+  "last_processed_slot": 298412890,
+  "timestamp": "2025-02-23T14:30:00.000Z"
+}

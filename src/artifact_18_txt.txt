@@ -1,0 +1,5 @@
+00:00 ─── 00:20 : The Hook & The Problem
+00:20 ─── 00:50 : The Core Primitive & Math
+00:50 ─── 01:25 : Live Demo (Init, Accrue, Withdraw, Cancel)
+01:25 ─── 01:45 : Under the Hood (CU Benchmarks & Token-2022)
+01:45 ─── 02:00 : The Krakow Hackathon Vision & Closing

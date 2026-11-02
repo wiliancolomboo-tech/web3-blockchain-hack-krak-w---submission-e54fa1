@@ -1,0 +1,24 @@
+flowchart TD
+    subgraph Client & Enterprise Layers
+        A[Buyer / Enterprise ERP] -->|1. Initialize & Fund PDA Vault| C[KrakSettle Solana Smart Contract]
+        B[Seller / Contractor] -->|2. Deliver Milestone Work| A
+        A -->|3. Approve Milestone| C
+        A -.->|Dispute Raised| C
+        D[Enterprise Arbiter] -->|Resolve Dispute| C
+    end
+
+    subgraph Solana Runtime [Sealevel VM]
+        C --> E[Escrow State PDA]
+        C --> F[Vault PDA / Lamport Pool]
+        F -->|Release Pro-rata Payment| B
+        F -->|Full Refund / Arbiter Split| A
+    end
+
+    subgraph Automation & Observability Pipeline
+        C -->|Emit On-Chain Events| G[Solana Geyser / RPC WebSocket]
+        G -->|Stream Logs| H[KrakSettle Event Daemon Node.js]
+        H -->|HTTP POST JSON Payload| I{Enterprise Dispatcher}
+        I -->|Direct Message / Alerts| J[Slack / Discord Webhooks]
+        I -->|Audit Trail PDF / Notifications| K[Resend Email API]
+        I -->|Accounting Reconciliation| L[Enterprise ERP Webhook]
+    end

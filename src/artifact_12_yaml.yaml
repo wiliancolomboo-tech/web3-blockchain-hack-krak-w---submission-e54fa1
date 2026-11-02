@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  vistula-telemetry:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vistula_worker
+    restart: always
+    environment:
+      - PORT=8080
+      - SOLANA_RPC_WS=wss://api.devnet.solana.com
+      - PROGRAM_ID=Vist111111111111111111111111111111111111111
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - ENTERPRISE_ACCOUNTING_EMAIL=${ENTERPRISE_ACCOUNTING_EMAIL}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+    ports:
+      - "8080:8080"

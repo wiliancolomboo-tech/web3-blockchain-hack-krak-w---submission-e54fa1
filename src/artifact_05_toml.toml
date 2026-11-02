@@ -1,0 +1,20 @@
+[package]
+name = "krak-guard"
+version = "0.1.0"
+description = "Institutional Treasury Circuit Breaker & Velocity Rate Limiter"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "krak_guard"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = { version = "0.30.1", features = ["init-if-needed"] }
+anchor-spl = { version = "0.30.1", features = ["token"] }

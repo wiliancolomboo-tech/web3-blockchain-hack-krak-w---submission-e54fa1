@@ -1,0 +1,18 @@
+RUNBOOK CHECKSHEET
++------------------------------------+------------------------------------------+------------------------------+
+| Action                             | Command / Endpoint                       | Expected Healthy Response    |
++------------------------------------+------------------------------------------+------------------------------+
+| 1. Check RPC Cluster Ping          | curl -X POST -H "Content-Type:           | {"jsonrpc":"2.0",            |
+|                                    | application/json" -d '{"jsonrpc":"2.0",  |  "result":{"solana-core":    |
+|                                    | "id":1,"method":"getVersion"}'           |  "1.18.26"}}                 |
+|                                    | http://127.0.0.1:8899                    |                              |
+|                                    |                                          |                              |
+| 2. Run PDA Verification CLI        | yarn cli show-pda -e 1001                | Prints Escrow State & Vault  |
+|                                    |                                          | PDAs with Bump seed validity |
+|                                    |                                          |                              |
+| 3. Launch Full Test Suite          | yarn test                                | 7 passing (100% assertions)  |
+|                                    |                                          |                              |
+| 4. Health Check Daemon             | docker inspect --format=                 | "healthy"                    |
+|                                    | '{{json .State.Health.Status}}'          |                              |
+|                                    | krakow-reconciliation-daemon             |                              |
++------------------------------------+------------------------------------------+------------------------------+

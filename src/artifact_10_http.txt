@@ -1,0 +1,13 @@
+GET /health HTTP/1.1
+   Host: localhost:8080
+   
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   
+   {
+     "status": "HEALTHY",
+     "network": "solana-devnet",
+     "connected_peers": 1,
+     "processed_signatures_cache_size": 1420,
+     "uptime_seconds": 86400
+   }

@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  krakow-automation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: krakowpay-daemon
+    restart: always
+    environment:
+      - PORT=8080
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - PROGRAM_ID=KrkPay1111111111111111111111111111111111111
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - ADMIN_NOTIFY_EMAIL=audit@krakowpay.network
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

@@ -1,0 +1,1 @@
+anchor run resolve-breaker -- --vault <VAULT_PUBKEY>

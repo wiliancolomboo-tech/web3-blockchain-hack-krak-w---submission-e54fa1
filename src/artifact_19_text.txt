@@ -1,0 +1,9 @@
+KrakFlow Protocol - CoW Batch Auction Verification
+    ✔ 1. Initializes Protocol Configuration (182ms)
+    ✔ 2. Initializes Batch Auction Epoch (145ms)
+    ✔ 3. Accepts CoW intent deposits from Trader A and Trader B (320ms)
+    ✔ 4. Solver opens settlement with Uniform Clearing Price (2.0 B per A) (128ms)
+    ✔ 5. Settles both orders internally via CoW clearing at P* (276ms)
+    ✔ 6. Prevents unauthorized double-settlement and finalizes batch (198ms)
+
+  6 passing (1.3s)

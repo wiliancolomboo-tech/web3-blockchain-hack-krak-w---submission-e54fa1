@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  kssp-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kssp-enterprise-agent
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - PROGRAM_ID=Kssp111111111111111111111111111111111111111
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - AUDIT_EMAIL_TO=${AUDIT_EMAIL_TO}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"

@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  krakstream-telemetry:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: krakstream-telemetry-engine
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - PROGRAM_ID=KrAk111111111111111111111111111111111111111
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - ALERT_EMAIL=finance-desk@enterprise.org
+    ports:
+      - "8080:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

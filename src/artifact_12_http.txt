@@ -1,0 +1,4 @@
+HTTP/1.1 200 OK
+   Content-Type: application/json
+
+   {"status":"HEALTHY","lastProcessedSlot":294104921,"cluster":"https://api.devnet.solana.com","timestamp":"2025-02-23T14:32:00.000Z"}

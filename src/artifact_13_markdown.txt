@@ -1,0 +1,26 @@
+🧵 1/3
+Thrilled to introduce @KrakGuard for Blockchain Hack Kraków! 🏰⚡
+
+Enterprise procurement on @Solana has suffered from custodial escrow friction and zero SLA visibility.
+
+We built KrakGuard: Institutional, PDA-segregated milestone escrow with cryptographic arbitration & zero re-entrancy risks.
+
+#Solana #KrakowHack
+
+---
+
+🧵 2/3
+Under the hood:
+🔒 Strict Anchor state machine isolating collateral per engagement.
+⚖️ Deterministic basis-point arbitration engine with instant settlement.
+📡 Real-time telemetry worker dispatching audit trails via @resend and Discord webhooks instantly on every transition.
+
+---
+
+🧵 3/3
+Turnkey from Day 1:
+✅ 100% test coverage with Anchor & Mocha
+✅ Complete Dockerized sentinel daemon
+✅ Open-source, production-ready code
+
+Special thanks to the Blockchain Hack Kraków mentors & judges! Check out the architecture and deploy it in 60s: https://github.com/your-org/krakguard 🚀

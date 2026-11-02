@@ -1,0 +1,43 @@
++---------------------------------------------------------------------------+
+|                          INTEGRATION TOPOLOGY                             |
++---------------------------------------------------------------------------+
+|                                                                           |
+|   +-----------------------+                    +----------------------+   |
+|   | Enterprise Client     |                    | Service Provider     |   |
+|   | Web3 Dashboard / API  |                    | Monitored Node / API |   |
+|   +-----------+-----------+                    +----------+-----------+   |
+|               |                                           |               |
+|         (Initialize / Fund)                        (Heartbeats / SLAs)    |
+|               |                                           |               |
+|               v                                           v               |
+|   +---------------------------------------------------------------+       |
+|   |              Solana Mainnet-Beta / Devnet Cluster             |       |
+|   |                                                               |       |
+|   |   +-------------------------------------------------------+   |       |
+|   |   | Program: AetherGuard (Anchor v0.30+)                  |   |       |
+|   |   |                                                       |   |       |
+|   |   | - State Account PDA: ['sla_agreement', client, id]    |   |       |
+|   |   | - Vault PDA: ['escrow_vault', agreement_pda]          |   |       |
+|   |   +-------------------------------------------------------+   |       |
+|   +-------------------------------+-------------------------------+       |
+|                                   |                                       |
+|                             (Anchor RPC)                                  |
+|                                   v                                       |
+|   +---------------------------------------------------------------+       |
+|   |              AetherGuard Automation Keeper Daemon             |       |
+|   |                                                               |       |
+|   | - Real-time Slot Clock Synchronization                         |       |
+|   | - Latency & Uptime Attestation Engine                         |       |
+|   | - On-chain Slashing Trigger Execution                         |       |
+|   +-------------------------------+-------------------------------+       |
+|                                   |                                       |
+|                          (HTTP POST Webhook)                              |
+|                                   v                                       |
+|   +---------------------------------------------------------------+       |
+|   |                   Enterprise Notification Bus                 |       |
+|   |                                                               |       |
+|   | - Resend API: Transactional Email to Corporate DevOps         |       |
+|   | - Discord / Slack Enterprise Webhook Alerts                   |       |
+|   | - System Telemetry Healthcheck (Port :8080)                   |       |
+|   +---------------------------------------------------------------+       |
++---------------------------------------------------------------------------+

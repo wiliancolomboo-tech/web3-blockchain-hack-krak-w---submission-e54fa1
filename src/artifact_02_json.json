@@ -1,0 +1,6 @@
+{
+  "from": "AetherSettle Audit <settlements@aethersettle.io>",
+  "to": ["finance-audit@client-enterprise.com"],
+  "subject": "[DISBURSEMENT NOTIFICATION] Escrow ID: 0x8F9a... - Milestone 2 Completed",
+  "html": "<p>A milestone disbursement of <strong>50,000 USDC</strong> has been released on Solana mainnet-beta.</p><p><strong>Transaction Signature:</strong> 5Knp7...</p><p><strong>Vault Balance Remaining:</strong> 25,000 USDC</p>"
+}

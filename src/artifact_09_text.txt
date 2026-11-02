@@ -1,7 +1,5 @@
-krakow_flashstream e2e test suite
-    ✔ 1. Successfully opens streaming channel and locks collateral in PDA vault (412ms)
-    ✔ 2. Executes cooperative close with dual signatures and atomic payout/refund (385ms)
-    ✔ 3. Rejects invalid withdrawal exceeding initial channel deposit (120ms)
-    ✔ 4. Slashes fraudulent actor upon valid challenge nonce detection (448ms)
+Building at Blockchain Hack Kraków? 🇵🇱
 
-  4 passing (2s)
+Grants, bounties, and enterprise IT payouts still suffer from counterparty settlement risk, opaque dispute handling, and disconnected Web2 accounting.
+
+Meet StreamShield: The sovereign, sub-second institutional escrow engine on @solana. 🛡️⚡ #Solana #KrakowTech

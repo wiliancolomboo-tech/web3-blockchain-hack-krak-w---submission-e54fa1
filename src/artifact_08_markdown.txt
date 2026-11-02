@@ -1,0 +1,8 @@
+### L1 Operational Runbook: Incident Response & Emergency Escalation
+
+1. **RPC Desynchronization**:
+   - The daemon monitors slot progression. If the difference between local processed slot and network slot exceeds 150, an automatic WebSocket re-handshake triggers.
+2. **Key Rotation**:
+   - Funder, Recipient, and Arbiter can be rotated per escrow instance without protocol redeployment.
+3. **Healthcheck Endpoint**:
+   - `GET http://localhost:8080/health` returns `{"status":"UP","active_subscription":true,"network":"devnet"}`.

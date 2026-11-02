@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  solana-test-validator:
+    image: solanalabs/solana:v1.18.18
+    container_name: krakflow-validator
+    command: >
+      solana-test-validator
+      --reset
+      --bind-address 0.0.0.0
+      --rpc-port 8899
+      --faucet-port 9900
+    ports:
+      - "8899:8899"
+      - "8900:8900"
+    healthcheck:
+      test: ["CMD", "solana", "cluster-version", "--url", "http://127.0.0.1:8899"]
+      interval: 3s
+      timeout: 5s
+      retries: 10
+
+  krakflow-relayer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: krakflow-relayer-daemon
+    restart: always
+    depends_on:
+      solana-test-validator:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=http://solana-test-validator:8899
+      - SOLANA_WS_URL=ws://solana-test-validator:8900
+      - KRAKFLOW_PROGRAM_ID=KrakFlow111111111111111111111111111111111111
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - AUDIT_EMAIL_RECIPIENT=${AUDIT_EMAIL_RECIPIENT}
+    ports:
+      - "9090:9090"

@@ -1,0 +1,4 @@
+3/ Fully tested with 100% QA matrix coverage, live on Solana Devnet, and turnkey dockerized for production grants & enterprise DAOs.
+
+💻 GitHub & Architecture Specs: https://github.com/aegisvault/krakow-submission
+Congratulations to everyone building at Blockchain Hack Kraków! 🇵🇱✨

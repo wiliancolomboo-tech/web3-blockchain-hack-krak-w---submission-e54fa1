@@ -1,0 +1,12 @@
+stateDiagram-v2
+    [*] --> Uninitialized
+    Uninitialized --> Active : initialize_and_deposit()
+    Active --> MilestoneSubmitted : submit_milestone_proof()
+    MilestoneSubmitted --> Settled : verify_milestone() & release_escrow()
+    Active --> Disputed : raise_dispute()
+    MilestoneSubmitted --> Disputed : raise_dispute()
+    Disputed --> Settled : resolve_dispute(Release)
+    Disputed --> Refunded : resolve_dispute(Refund)
+    Active --> Refunded : cancel_expired() [Clock >= Timeout]
+    Settled --> [*]
+    Refunded --> [*]

@@ -1,0 +1,27 @@
+🧵 1/3: Excited to announce our submission for Blockchain Hack Kraków! 🇵🇱 ⚡
+
+Meet KrakówFlow: Institutional B2B Milestone Escrow on @Solana. 
+We're eliminating 3-6% escrow fees and multi-day wire delays by automating milestone disbursements with 400ms finality.
+
+#Solana #Web3 #KrakowHackathon
+
+---
+
+🧵 2/3: Under the hood:
+🔒 PDA-anchored escrow state machines
+🧾 Cryptographic deliverable attestations (SHA-256)
+⚖️ Programmable arbiter resolution & SLA dispute timelocks
+🚀 Real-time enterprise alerts via @resend & Webhooks
+
+Zero intermediary custody. Zero downtime. 
+
+---
+
+🧵 3/3: Built for enterprise adoption and fully open source:
+💻 Anchor smart contract + TypeScript Telemetry Worker
+🐳 1-click Docker deployment
+🧪 100% Passing test matrix
+
+Check out our full submission and code on GitHub: https://github.com/your-org/krakow-flow
+
+Dziękuję Kraków! 🦞✨

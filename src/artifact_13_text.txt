@@ -1,0 +1,7 @@
+How KrakGuard secures millions on @Solana:
+🛡️ Sliding-window velocity limits enforced directly via PDA vaults
+⏳ Timelocked quarantine queues for abnormal spikes
+🤖 Off-chain Watchtower engine with real-time @resend & Slack SOC alerting
+🚫 Sub-second circuit breaks
+
+Zero theoretical stubs. 100% production Anchor Rust.

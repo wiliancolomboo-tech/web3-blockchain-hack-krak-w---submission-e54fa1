@@ -1,0 +1,5 @@
+SOLANA_RPC_URL=https://api.devnet.solana.com
+PROGRAM_ID=KrakSent11111111111111111111111111111111111
+RESEND_API_KEY=re_123456789_abcdefg
+RESEND_TO_EMAIL=sponsor@krakowhack.pl
+SLACK_OR_DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder

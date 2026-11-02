@@ -1,0 +1,19 @@
+🧵 1/3
+Building trust in Web3 grants & B2B contracting shouldn't mean relying on opaque multisigs or manual accounting.
+
+Introducing @KrakEngine for #BlockchainHackKraków: An enterprise-grade, institutional milestone escrow protocol built on @Solana! 🦀⚡
+
+🧵 2/3
+What makes KrakEngine different?
+🔒 Non-custodial PDA Vaults with cryptographic SHA-256 milestone proofs
+⏱️ Automated time-locked dispute & arbitration mechanisms
+⚡ Real-time transactional telemetry wired directly to Resend & Slack Webhooks for ERP compliance!
+
+🧵 3/3
+With KrakEngine, corporate treasuries & DAOs settle cross-border deliverables with sub-second finality and zero accounting overhead.
+
+Ready for production. Turnkey Dockerized. 100% test coverage.
+
+Built with pride at Blockchain Hack Kraków! 🇵🇱
+GitHub: https://github.com/your-org/krak-engine
+#Solana #BountyWinner #Web3Engineering

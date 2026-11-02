@@ -1,0 +1,6 @@
+PORT=8080
+SOLANA_RPC_URL=https://api.devnet.solana.com
+PROGRAM_ID=KrkVauLt33XpY2kZ4Z5qV8rB9nMcDfP1sW7tQoLu1111
+RESEND_API_KEY=re_123456789_abcdefghijklmnopqrstuvwxyz
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+RECIPIENT_EMAIL_OVERRIDE=finance@krakow-enterprise.pl

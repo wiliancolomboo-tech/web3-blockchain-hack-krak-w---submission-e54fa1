@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  solwawel-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solwawel-enterprise-daemon
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WS_URL=wss://api.devnet.solana.com
+      - PROGRAM_ID=WawE111111111111111111111111111111111111111
+      - RESEND_API_KEY=${RESEND_API_KEY:-re_1234567890}
+      - RESEND_FROM_EMAIL=audit@solwawel.krakow.network
+      - AUDIT_RECIPIENT_EMAIL=accounting@sponsor.krakow.network
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-}
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

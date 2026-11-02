@@ -1,0 +1,14 @@
+1/3 🏰 Live from Kraków! Proud to introduce KrakFlow: The Enterprise Conditional Settlement & Milestone Arbitration Protocol built for @Solana at Blockchain Hack Kraków. 
+
+Sub-second finality meets real-world enterprise trade rails. 🚀⚡️ #Solana #BlockchainKrakow #Web3
+
+2/3 🛠 Why KrakFlow?
+Traditional escrows charge 5% and take 3 days to wire funds.
+KrakFlow executes programmable milestone payouts in <800ms for <$0.001 with:
+✅ Fail-safe timeout decay
+✅ Multi-sig dispute arbitration
+✅ Real-time @resend receipts & @Slack alerts
+
+3/3 📦 100% open-source, turnkey Docker ready, zero-unsafe Anchor smart contracts, and verified on Devnet. 
+
+Check out the full repo, run the test matrix, and experience institutional-grade settlements on Solana: https://github.com/krakflow/krakflow-core 🇵🇱🦀

@@ -1,0 +1,1 @@
+docker logs -f --tail=100 krakstream-telemetry-engine

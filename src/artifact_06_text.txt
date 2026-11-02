@@ -1,0 +1,10 @@
+daemon/
+├── package.json
+├── tsconfig.json
+├── src/
+│   ├── index.ts
+│   ├── config.ts
+│   ├── services/
+│   │   ├── emailService.ts
+│   │   └── slackService.ts
+│   └── subscriber.ts

@@ -1,0 +1,17 @@
++-------------------------------------------------------------------------------+
+|                            OPERATIONAL RUNBOOK                                |
++------------------+------------------------------------------------------------+
+| Component        | Procedure & Recovery Vector                                |
++------------------+------------------------------------------------------------+
+| RPC Rate Limits  | Fall back automatically across Triton, Helius, and QuickNode|
+|                  | RPC pool using dynamic round-robin connection headers.     |
++------------------+------------------------------------------------------------+
+| State Desync     | Crank queries on-chain stream PDA slot state before issuing |
+|                  | claim txs. Math calculations use checked floor thresholds. |
++------------------+------------------------------------------------------------+
+| Webhook Failure  | Resend & Slack calls retry on exponential backoff (1s, 2s,  |
+|                  | 4s) up to 3 attempts, logging dead-letter payloads locally.|
++------------------+------------------------------------------------------------+
+| Keys & Vaults    | Vault keys are derived deterministically as PDAs; zero      |
+|                  | private keys hold funds. Senders retain sole clawback rights.|
++------------------+------------------------------------------------------------+

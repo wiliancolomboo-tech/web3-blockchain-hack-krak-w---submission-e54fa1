@@ -1,0 +1,9 @@
+client/
+├── package.json
+├── tsconfig.json
+├── src/
+│   ├── index.ts
+│   ├── services/
+│   │   ├── emailService.ts
+│   │   └── slackService.ts
+│   └── keeper.ts

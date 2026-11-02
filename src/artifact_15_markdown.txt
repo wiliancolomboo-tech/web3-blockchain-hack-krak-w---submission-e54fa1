@@ -1,0 +1,15 @@
+🧵 1/3: 🏛️ Thrilled to present KrakGuard for Blockchain Hack Kraków!
+Grant disbursements & hackathon milestone releases are broken—either trapped in slow multi-sigs or off-chain escrow black holes.
+
+We built KrakGuard: an autonomous, institutional milestone escrow & canary clawback engine on @solana. ⚡🦀
+
+🧵 2/3: 🔒 Under the hood:
+• Deterministic PDA-isolated vaults & Ascending-Deadline Timelocks
+• Cryptographic milestone proof verification (zero unsafe deserialization)
+• Automated Canary Timeout clawbacks for breached SLAs
+• Real-time Enterprise relay with @resend & Discord webhooks 🚀
+
+🧵 3/3: 🛠️ 100% turnkey, test-verified, & production ready.
+Featuring Anchor 0.30, sub-second disbursals, zero-rent leaks, and full Docker orchestration for enterprise grants.
+
+Check out the full open-source repo & live Devnet demo! 👇 #Solana #BlockchainKrakow #Rust #Web3

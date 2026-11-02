@@ -1,0 +1,1 @@
+npm install @coral-xyz/anchor @solana/web3.js dotenv resend axios

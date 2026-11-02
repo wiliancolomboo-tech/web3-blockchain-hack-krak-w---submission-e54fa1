@@ -1,0 +1,7 @@
+SOLANA_RPC_HTTP=https://api.devnet.solana.com
+SOLANA_RPC_WS=wss://api.devnet.solana.com
+VISTULA_PROGRAM_ID=VisTu1a111111111111111111111111111111111111
+RESEND_API_KEY=re_123456789_abcdefghijklmnopqrstuvwxyz
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+FINANCE_NOTIFICATION_EMAIL=settlements@enterprise.acme
+PORT=8080

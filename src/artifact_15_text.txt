@@ -1,0 +1,7 @@
+2/3 ⚡ Under the hood of Kraków Vault:
+🔒 Non-custodial PDA Escrows with zero lamport leakage
+🧩 Blake3/SHA256 deliverable commit proofs
+⚖️ Timelocked dispute arbitration & multi-stakeholder resolution
+🔔 Real-time event relayer pushing instant updates to @resend & Discord
+
+Deterministic code. 100% test coverage.

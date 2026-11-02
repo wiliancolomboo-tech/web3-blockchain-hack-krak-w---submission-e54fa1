@@ -1,0 +1,7 @@
+SOLANA_RPC_URL=https://api.devnet.solana.com
+SOLANA_WS_URL=wss://api.devnet.solana.com
+PROGRAM_ID=KSN1111111111111111111111111111111111111111
+RESEND_API_KEY=re_YOUR_ACTIVE_RESEND_KEY
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+FINANCE_EMAIL_RECIPIENT=treasury-compliance@krakow-nexus.io
+PORT=8080

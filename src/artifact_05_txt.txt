@@ -1,10 +1,5 @@
-+--------------------------+-------------------------------------------------------+-------------------------------------------------------------+
-| Vulnerability Vector     | Attack Surface                                        | Krakow FlashStream On-Chain Mitigation                     |
-+--------------------------+-------------------------------------------------------+-------------------------------------------------------------+
-| Reentrancy Attacks       | External Token Transfers during cooperative close     | State updated before Token CPI invokes; Anchor CEI pattern  |
-| Stale State Replay       | Submitting historical low-payout vouchers             | Strict monotonicity guard: signature_nonce > latest_nonce   |
-| PDA Impersonation        | Forging fake escrow token accounts                    | Seeds verified with bump validation & has_one = token_vault |
-| Premature Dispute Claim  | Calling finalize before challenge window passes       | Strict slot check: current_slot >= dispute_slot + 500       |
-| Arithmetic Overflow      | Large voucher payouts wrapping u64 bounds             | Checked arithmetic: checked_add/sub everywhere              |
-| Vault Draining Collusion | Passing unauthorized recipient accounts               | Channel has_one = recipient & has_one = payer constraints   |
-+--------------------------+-------------------------------------------------------+-------------------------------------------------------------+
+---
+
+# 5. Comprehensive Test Suite & QA Matrix
+
+Save this file as `tests/krakow_escrow.ts`.

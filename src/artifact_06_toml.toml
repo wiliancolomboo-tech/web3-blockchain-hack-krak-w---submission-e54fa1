@@ -1,0 +1,24 @@
+[toolchain]
+anchor_version = "0.30.1"
+solana_version = "1.18.26"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.devnet]
+krakow_sentinel = "Krak7Z7qWj4UfPZfTNxTfV5m6H4Z2M4K8S2xH9X1p9P"
+
+[programs.localnet]
+krakow_sentinel = "Krak7Z7qWj4UfPZfTNxTfV5m6H4Z2M4K8S2xH9X1p9P"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.spec.ts"
+relayer = "ts-node relayer/sentinel-daemon.ts"

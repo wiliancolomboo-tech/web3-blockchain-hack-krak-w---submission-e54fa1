@@ -1,0 +1,8 @@
+AegisVault Institutional DeFi Test Suite
+    ✔ 1. Initializes the AegisVault with 80/20 Tranche Boundaries (412ms)
+    ✔ 2. Deposits Liquidity into Senior Tranche (324ms)
+    ✔ 3. Deposits Liquidity into Junior Tranche (311ms)
+    ✔ 4. Prevents Zero-Value Deposits (189ms)
+    ✔ 5. Allows Partial Withdrawal of Senior Shares (348ms)
+
+  5 passing (2s)

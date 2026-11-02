@@ -1,0 +1,8 @@
+{
+  "status": "healthy",
+  "protocol": "KrakFlow",
+  "network": "solana-devnet",
+  "program_id": "KrakF1ow11111111111111111111111111111111111",
+  "uptime_seconds": 86420,
+  "events_processed": 1420
+}

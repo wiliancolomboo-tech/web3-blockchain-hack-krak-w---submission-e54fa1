@@ -1,0 +1,9 @@
+✔ TC-INIT-01: Initializes the vault with deterministic PDAs and rate bounds (182ms)
+✔ TC-DEP-01: Correctly accepts native SOL deposits into PDA escrow (210ms)
+✔ TC-WDR-01: Permits withdrawals within configured velocity limits (195ms)
+✔ TC-BRK-01: Automatically freezes when withdrawal violates window velocity (174ms)
+✔ TC-FRZ-01: Completely blocks subsequent actions while frozen (89ms)
+✔ TC-RST-01: Rejects circuit breaker reset from unauthorized signer (92ms)
+✔ TC-RST-02: Successfully unlocks vault via legitimate Guardian reset (167ms)
+
+7 passing (1.1s)

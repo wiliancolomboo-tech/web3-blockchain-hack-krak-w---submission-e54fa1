@@ -1,0 +1,8 @@
+orchestrator/
+├── package.json
+├── tsconfig.json
+├── src/
+│   ├── services/
+│   │   ├── slack.ts
+│   │   └── resend.ts
+│   └── daemon.ts

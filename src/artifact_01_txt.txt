@@ -1,12 +1,18 @@
-+--------------------------------------------------------------------------------------------------+
-|                                    KRAKÓW FLASHSTREAM (KFS)                                      |
-+--------------------------------------------------------------------------------------------------+
-|  [Payer] ----(Off-chain Signed State: Nonce + Cumulative Amount)----> [Provider / Worker]       |
-|    |                                                                         |                   |
-|    +-- [Deposit Escrow] --+                                                  | (Sub-second micro)|
-|                           v                                                  v                   |
-|                 +-------------------+                              +-------------------+         |
-|                 |  On-Chain Escrow  | <=== (Cooperative Close) === | Final Claim State |         |
-|                 |       Vault       | <=== (Unilateral Dispute) == | Signed Voucher    |         |
-|                 +-------------------+                              +-------------------+         |
-+--------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+|                                 KRAKSETTLE ENGINE                                 |
+|                                                                                   |
+|  [Enterprise Client]                                                              |
+|        │                                                                          |
+|        ▼ (1. Deposit & Lock)                                                      |
+|  [Solana PDA Vault] ──(2. Deliverable Proof)──► [KrakSettle Anchor Protocol]       |
+|                                                         │                         |
+|                                  (3. Verification CPI)  ▼                         |
+|  [Contractor / Vendor] ◄──(4. Instant Settlement)─── [SPL Token Vault]            |
+|                                                         │                         |
+|                                                         ▼ (5. Off-chain Event)    |
+|                                            [Enterprise Automation Worker]         |
+|                                                         │                         |
+|                                      ┌──────────────────┴──────────────────┐      |
+|                                      ▼                                     ▼      |
+|                            [Resend Invoice Engine]               [Enterprise Webhook]
++-----------------------------------------------------------------------------------+

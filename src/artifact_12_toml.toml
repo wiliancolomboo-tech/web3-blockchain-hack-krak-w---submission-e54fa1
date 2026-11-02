@@ -1,0 +1,6 @@
+[programs.devnet]
+wawel_protocol = "wAwEL9kR8QvA8pL3p7Z5d8L4B9N2m1Y6X3V1C7kF5hE"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"

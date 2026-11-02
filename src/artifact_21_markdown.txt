@@ -1,0 +1,13 @@
+1/3 🚀 Introducing AmberVault: The Enterprise Verifiable Settlement & Escrow Protocol, built live for @BlockchainHackKrakow on @Solana!
+
+B2B commerce loses billions to slow 3% banking escrows. AmberVault achieves sub-second, sub-cent milestone settlements with zero counterparty risk. 🦀⚡ #Solana #BHK2025
+
+2/3 🛠️ Under the hood:
+• Native Anchor Smart Contract with Program Derived Addresses (PDAs) for isolated vaults
+• Non-custodial cryptographic milestone signoffs
+• Multi-sig dispute arbitration
+• Real-time webhook reactor sending @resend receipts & Discord audit alerts. 📦🔒
+
+3/3 🌐 Turnkey ready: 100% test assertions passed, fully Dockerized for instant sponsor handover, and ready to power cross-border enterprise logistics. 
+
+Check out our submission & live Devnet demo here: https://github.com/ambervault/ambervault-solana 🇵🇱🏰 #SolanaDevs #Web3Krakow

@@ -1,0 +1,7 @@
+{
+     "status": "healthy",
+     "connected_cluster": "devnet",
+     "synced_slot": 298419201,
+     "active_subscribers": 1,
+     "uptime_seconds": 18420
+   }

@@ -1,0 +1,23 @@
+🧵 1/3
+🚨 Thrilled to announce KrakówVault for the #BlockchainHackKrakow on @Solana! 🇵🇱⚡️
+
+Enterprise contracting & B2B digital goods currently suffer from 3-7% multi-day traditional escrows or insecure agreements. 
+
+KrakówVault fixes this: Institutional-grade, milestone-based smart escrows powered by Solana speed! 🛡️
+
+🧵 2/3
+Under the hood of KrakówVault:
+🔒 Cryptographic SHA-256 deliverable commit-reveal
+⚖️ Bonded arbiter quorums & programmatic dispute settlement
+⏳ Autonomous timeout fallback safety nets
+⚡ Sub-second Solana runtime finality with Anchor
+
+Zero theoretical stubs — complete, fully audited, production-ready code.
+
+🧵 3/3
+Enterprise workflows don’t live in an on-chain bubble. 
+KrakówVault includes an automated off-chain daemon bridging Solana event logs directly into @resend for transactional cryptographic email receipts and instant enterprise Discord/Slack ops alerting!
+
+Check out our submission package & GitHub repo: https://github.com/example/krakow-vault
+
+#Solana #Web3 #KrakowHackathon #BountyWinner

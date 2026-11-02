@@ -1,0 +1,8 @@
+{
+  "status": "HEALTHY",
+  "network": "solana-devnet",
+  "program_id": "KrakF1ow11111111111111111111111111111111111",
+  "synced_slot": 314159265,
+  "dispatcher_resend": "ENABLED",
+  "dispatcher_discord": "CONNECTED"
+}

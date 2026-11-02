@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  sentry-oracle-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: krakow-sentry-oracle
+    restart: always
+    environment:
+      - RESEND_API_KEY=re_demo_48375839281729381729
+      - ENTERPRISE_ALERT_EMAIL=sre-team@krakow-enterprise.io
+      - ALERT_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+    volumes:
+      - ./keys/oracle-keypair.json:/usr/src/app/oracle.json:ro
+    command: >
+      daemon
+      --keypair /usr/src/app/oracle.json
+      --sla-id 1001
+      --rpc https://api.devnet.solana.com
+      --interval 15
+    healthcheck:
+      test: ["CMD-SHELL", "node -e 'console.log(process.uptime() > 0 ? 0 : 1)'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

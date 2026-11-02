@@ -1,0 +1,5 @@
+🚨 70% of treasury drain vectors on @Solana succeed because human multisigs simply can't react within a 400ms slot.
+
+Introducing KrakGuard: Institutional-grade dynamic velocity limiting & autonomous circuit breakers for Solana. Built for #BlockchainHackKrakow 🏰⚡
+
+Read more 👇

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  kraksettle-telemetry-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kraksettle-enterprise-agent
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WS_URL=wss://api.devnet.solana.com
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - INVOICE_SENDER_EMAIL=receipts@kraksettle.io
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3

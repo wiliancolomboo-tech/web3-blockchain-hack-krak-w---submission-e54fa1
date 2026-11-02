@@ -1,0 +1,6 @@
+Ready to test? StreamShield is 100% open-source, containerized with 1-click Docker orchestration, and running on Solana Devnet.
+
+Check out the code, run the Mocha integration test suite, and deploy your grant engine today:
+👉 github.com/streamshield/solana-streamshield
+
+Dziękuję Kraków! 🚀🦀 @SolanaFndn #Web3Krakow

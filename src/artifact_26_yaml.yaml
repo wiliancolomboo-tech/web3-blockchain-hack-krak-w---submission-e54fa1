@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  aegis-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegis_sentinel_worker
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+      - SOLANA_WS_URL=wss://api.mainnet-beta.solana.com
+      - PROGRAM_ID=Aegis11111111111111111111111111111111111111
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - SENDER_EMAIL=settlements@aegisvault.fi
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - OPERATIONS_ALERT_EMAIL=ops@enterprise.fi
+      - LEGAL_ALERT_EMAIL=disputes@enterprise.fi
+    ports:
+      - "8080:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"

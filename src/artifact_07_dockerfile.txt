@@ -1,0 +1,23 @@
+FROM node:20-alpine AS builder
+
+WORKDIR /usr/src/app
+
+COPY package*.json tsconfig.json ./
+RUN npm ci
+
+COPY services ./services
+RUN npm run build || true
+
+FROM node:20-alpine AS runner
+WORKDIR /usr/src/app
+
+ENV NODE_ENV=production
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY --from=builder /usr/src/app/services ./services
+
+EXPOSE 8080
+USER node
+
+CMD ["node", "services/watcher-daemon.js"]

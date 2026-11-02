@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  kraksentinel-orchestrator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kraksentinel-worker
+    restart: always
+    environment:
+      - PORT=8080
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WSS_URL=wss://api.devnet.solana.com
+      - PROGRAM_ID=Krak111111111111111111111111111111111111111
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - ENTERPRISE_AUDIT_EMAIL=settlements@enterprise-partner.pl
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"

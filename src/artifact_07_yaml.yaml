@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  streamshield-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: streamshield-daemon
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - STREAMSHIELD_PROGRAM_ID=StrMsh1eLd111111111111111111111111111111111
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - DISPATCH_RECEIPT_EMAIL=finance@krakowtech.eu
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "node", "-e", "process.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

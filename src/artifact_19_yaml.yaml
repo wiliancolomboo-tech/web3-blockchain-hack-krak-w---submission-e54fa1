@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  wawel-telemetry-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wawel-keeper-engine
+    restart: always
+    environment:
+      - PORT=8080
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WS_URL=wss://api.devnet.solana.com
+      - PROGRAM_ID=WaweL6zW8d9ZqV5vM5hP6jF8wZ2qL9Yk5bNx7c4E1aP
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - FINANCE_AUDIT_EMAIL=treasury@enterprise.corp
+    ports:
+      - "8080:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"

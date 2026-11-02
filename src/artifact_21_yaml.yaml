@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  sentinel-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solguard-sentinel-daemon
+    restart: unless-stopped
+    environment:
+      - SOLANA_RPC_URL=${SOLANA_RPC_URL:-https://api.devnet.solana.com}
+      - SOLANA_WS_URL=${SOLANA_WS_URL:-wss://api.devnet.solana.com}
+      - PROGRAM_ID=${PROGRAM_ID:-Guard11111111111111111111111111111111111111}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - ALERT_EMAIL=${ALERT_EMAIL:-ops@protocol.com}
+      - ALERT_WEBHOOK_URL=${ALERT_WEBHOOK_URL:-}
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "5"

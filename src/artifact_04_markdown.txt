@@ -1,0 +1,23 @@
+[x] 1. Reentrancy Protection:
+       - State modification pattern follows Checks-Effects-Interactions.
+       - hackathon.is_settled flag toggled to true BEFORE executing SPL transfer CPIs.
+
+[x] 2. Strict PDA Derivations & Canonical Bump Validation:
+       - All bumps validated via Anchor's internal ctx.bumps to guarantee non-malleability.
+       - Disallows off-curve key collisions.
+
+[x] 3. Account Ownership & Mint Verification:
+       - Checked constraints enforce that vault.key() == hackathon.vault.
+       - Mint account validated directly against the hackathon instance mint.
+
+[x] 4. Integer Overflow Protection:
+       - All mathematical calculations use explicit checked_add, checked_sub, 
+         or 128-bit wider intermediate scalar arithmetic.
+
+[x] 5. Sybil-Resistant Commit-Reveal Scheme:
+       - Judge cannot change scores after seeing peer submissions.
+       - Score unmasking verifies: H(score || salt || judge_pubkey) == stored_commitment.
+
+[x] 6. Memory & Stack Frame Safety:
+       - Accounts exceeding 1KB or deep account lists are wrapped in Box<Account<'info, T>> 
+         to prevent Solana BPF stack limit breaches (4KB stack frame ceiling).

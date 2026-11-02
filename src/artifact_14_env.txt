@@ -1,0 +1,6 @@
+SOLANA_RPC_URL=https://api.devnet.solana.com
+SOLANA_WSS_URL=wss://api.devnet.solana.com
+AEGIS_PROGRAM_ID=Aeg1sPay11111111111111111111111111111111111
+RESEND_API_KEY=re_123456789abcdef
+DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+AUDIT_EMAIL=treasury@krakow-hackathon.org

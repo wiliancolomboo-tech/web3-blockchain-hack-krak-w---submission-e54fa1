@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  aegis-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aegis_crank_daemon
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.devnet.solana.com
+      - SOLANA_WSS_URL=wss://api.devnet.solana.com
+      - AEGIS_PROGRAM_ID=AegisPay111111111111111111111111111111111111
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - FINANCE_NOTIFICATION_EMAIL=accounting@institutions.io
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('net').connect(80, 'api.devnet.solana.com')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"

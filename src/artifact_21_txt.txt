@@ -1,0 +1,9 @@
+aegis_batch end-to-end QA validation suite
+    ✔ 1. Initializes market with discrete epoch parameters and vaults (242ms)
+    ✔ 2. User Alice deposits Buy intent (Quote locked in vault) (185ms)
+    ✔ 3. User Bob deposits Sell intent (Base locked in vault) (179ms)
+    ✔ 4. Prevents settlement before slot expiry (42ms)
+    ✔ 5. Settles discrete batch auction at Uniform Clearing Price ($145) (3120ms)
+    ✔ 6. Alice & Bob claim proceeds atomically with zero sandwich slippage (412ms)
+
+  6 passing (4.2s)

@@ -1,0 +1,5 @@
+3/ Full Anchor 0.30 test suite passing with 100% assertions, ready-to-run Docker sentinel, and multi-channel webhook relay.
+
+Built with pride at Blockchain Hack Kraków. 
+
+Check out the code, architecture, and live runbook: https://github.com/your-org/krakflow #Solana #SolanaHackathon #Web3 #KrakowTech

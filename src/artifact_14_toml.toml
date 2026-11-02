@@ -1,0 +1,6 @@
+[programs.devnet]
+krak_stream = "<YOUR_PROGRAM_PUBKEY_FROM_ANCHOR_BUILD>"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"

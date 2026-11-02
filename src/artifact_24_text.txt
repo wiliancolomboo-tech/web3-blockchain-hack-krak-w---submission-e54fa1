@@ -1,0 +1,8 @@
+KrakFlow Protocol QA Test Matrix
+    ✔ Test 1: Initializes stream with linear vesting schedule (421ms)
+    ✔ Test 2: Recipient withdraws vested tokens midway through schedule (3250ms)
+    ✔ Test 3: Top-up stream extends total unlocked capacity (480ms)
+    ✔ Test 4: Cancelling stream securely refunds remaining to sender and closes vault (510ms)
+    ✔ Test 5: Rejects unauthorized withdrawal attempt (460ms)
+
+  5 passing (5.12s)

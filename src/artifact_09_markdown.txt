@@ -1,0 +1,12 @@
+1/3 🛡️ Excited to unveil Aegis-Kraków for Blockchain Hack Kraków (@BlockchainKrakow)! 
+Grant disbursement & hackathon payouts on Solana shouldn't rely on trust or clumsy multisigs. 
+
+We built a high-throughput, non-custodial milestone escrow engine with automated CPI vaults & dispute guards! 🧵👇
+
+2/3 ⚡ Built with @AnchorLang on Solana, Aegis binds deliverables directly to SHA-256 commit roots with time-decay challenge windows. 
+Plus, our containerized Sentinel daemon routes real-time telemetry to @resend & Discord webhooks so dev teams & sponsors never miss a beat.
+
+3/3 🏆 Open-source, turnkey Dockerization, zero-stub architecture, and 100% test coverage. 
+Check out our submission package and repo for Blockchain Hack Kraków: https://github.com/aegis-krakow/core 
+
+#Solana #BlockchainKrakow #Web3Bounty #RustLang #Anchor

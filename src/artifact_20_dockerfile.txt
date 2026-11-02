@@ -1,0 +1,29 @@
+# Multi-stage enterprise container for SolGuard Sentinel Daemon
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+COPY packages/sentinel-daemon/package*.json ./
+RUN npm ci
+
+COPY packages/sentinel-daemon/tsconfig.json ./
+COPY packages/sentinel-daemon/src ./src
+RUN npm run build
+
+FROM node:20-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+
+COPY packages/sentinel-daemon/package*.json ./
+RUN npm ci --only=production
+
+COPY --from=builder /app/dist ./dist
+
+# Standard non-root security container profile
+RUN addgroup -S solguard && adduser -S solguard -G solguard
+USER solguard
+
+EXPOSE 8080
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/healthz || exit 1
+
+CMD ["node", "dist/index.js"]

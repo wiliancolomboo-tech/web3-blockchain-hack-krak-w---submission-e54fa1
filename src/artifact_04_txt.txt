@@ -1,0 +1,4 @@
+programs/aegis_vault/
+├── Cargo.toml
+└── src/
+    └── lib.rs

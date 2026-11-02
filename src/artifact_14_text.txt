@@ -1,0 +1,8 @@
+KrakGuard turns every Solana protocol into a self-defending vault fortress. 
+
+Turnkey Docker setup, comprehensive test suites, and instant enterprise integrations.
+
+Check out our full open-source submission for Blockchain Hack Kraków 2025:
+https://github.com/krakguard/krakguard-core
+
+#Solana #SolanaDev #DeFiSecurity #KrakowHackathon

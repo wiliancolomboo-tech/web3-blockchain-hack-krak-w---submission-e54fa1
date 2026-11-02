@@ -1,0 +1,25 @@
+.PHONY: all build test deploy start clean
+
+all: build test
+
+build:
+	anchor build
+
+test:
+	anchor test
+
+deploy-devnet:
+	@echo "Deploying KrakGuard Escrow to Solana Devnet..."
+	solana config set --url https://api.devnet.solana.com
+	anchor build
+	solana program deploy target/deploy/krakguard_escrow.so
+
+start-daemon:
+	docker-compose up -d --build
+
+logs:
+	docker-compose logs -f krakguard-sentinel
+
+clean:
+	cargo clean
+	rm -rf dist node_modules

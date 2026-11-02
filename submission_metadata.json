@@ -1,0 +1,70 @@
+{
+  "deliverable_id": "superteam_9988e2e54fa1",
+  "opportunity_id": "st-00360512-10ed-4910-97be-b68563a8efc6",
+  "platform": "SuperteamEarn",
+  "title": "Blockchain Hack Kraków - Submissions",
+  "url": "https://earn.superteam.fun/listings/bounty/blockchain-hack-krakow-submissions",
+  "budget": "2,000 USDG",
+  "prize_amount": 2000.0,
+  "ecosystem": "Solana",
+  "github_url": "https://github.com/wiliancolomboo-tech/web3-blockchain-hack-krak-w---submission-e54fa1",
+  "status": "validation_warning",
+  "validation_reports": [
+    {
+      "file": "artifact_01_txt.txt",
+      "language": "txt",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "artifact_02_mermaid.txt",
+      "language": "mermaid",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "artifact_03_rust.rs",
+      "language": "rust",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "artifact_04_typescript.ts",
+      "language": "typescript",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "artifact_05_typescript.ts",
+      "language": "typescript",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "artifact_06_bash.sh",
+      "language": "bash",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "artifact_07_bash.sh",
+      "language": "bash",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "artifact_08_dockerfile.txt",
+      "language": "dockerfile",
+      "valid": true,
+      "error": null
+    },
+    {
+      "file": "artifact_09_yaml.yaml",
+      "language": "yaml",
+      "valid": false,
+      "error": "Unclosed bracket '['"
+    }
+  ],
+  "git_initialized": true,
+  "created_at": "2026-10-11 21:58:00"
+}

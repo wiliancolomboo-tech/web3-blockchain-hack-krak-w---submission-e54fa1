@@ -1,0 +1,7 @@
+[Admin Deposits SOL]
+             ↓
+     [PDA Vault Locked]
+             ↓
+[Juror Quorum + Slashing Window]
+             ↓
+[Autonomous Release + Enterprise Webhooks]

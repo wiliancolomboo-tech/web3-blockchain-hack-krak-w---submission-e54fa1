@@ -1,0 +1,15 @@
+1/3 🏛️ Introducing SolKrak: The Institutional Grant & Milestone Escrow Protocol built at #BlockchainHackKrakow! 🇵🇱 
+
+We solved the Web3 bounty custody dilemma: zero-counterparty risk milestone vaults on @Solana with sub-second automated settlement & native enterprise notification pipelines. ⚡️🦀
+
+2/3 ⚙️ Under the hood:
+• Anchor PDA-partitioned vaults (`[b"grant", authority, id]`)
+• Strict sequential SHA-256 milestone attestation
+• CPI automated payouts
+• Real-time transactional audit trail powered by @resend & Slack webhooks
+
+Zero stubs. 100% test coverage. Enterprise-ready. 🛡️
+
+3/3 🚀 Huge thanks to the mentors & judges at Blockchain Hack Kraków for fostering real Web3 innovation. Explore the open-source repo, deploy via Docker in 60 seconds, and run the comprehensive test suite: https://github.com/solkrak-protocol/solkrak-settlement
+
+#Solana #DeFi #RustLang #Web3Bounty #SolanaDevs

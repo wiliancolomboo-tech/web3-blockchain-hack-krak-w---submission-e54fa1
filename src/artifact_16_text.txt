@@ -1,0 +1,7 @@
+3/3 📦 Built for instant adoption by ecosystem accelerators and DAOs.
+Turnkey Docker setup, Anchor 0.30.1 smart contract, and automated relayer ready for mainnet.
+
+Inspect our repository and test suite on GitHub:
+👉 https://github.com/solana-krakow/krakow-vault
+
+Dziękujemy, Kraków! 🇵🇱 Let's keep building on @solana! 🚀

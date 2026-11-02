@@ -1,0 +1,1 @@
+solana account <ESCROW_PDA_ADDRESS> --url devnet
