@@ -8,7 +8,7 @@ services:
     container_name: krakow-sentry-oracle
     restart: always
     environment:
-      - RESEND_API_KEY=re_demo_48375839281729381729
+      - RESEND_API_KEY=re_test_000000000000000000000000
       - ENTERPRISE_ALERT_EMAIL=sre-team@krakow-enterprise.io
       - ALERT_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
     volumes:

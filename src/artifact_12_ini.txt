@@ -3,6 +3,6 @@ SOLANA_RPC_URL=https://api.devnet.solana.com
 PROGRAM_ID=KrkVault11111111111111111111111111111111111
 
 # Enterprise Telemetry Integrations
-RESEND_API_KEY=re_live_xxxxxxxxxxxxxxxxxxxxxxxx
+RESEND_API_KEY=re_test_000000000000000000000000
 DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
 NOTIFICATION_EMAIL=sponsors@hackkrakow.io

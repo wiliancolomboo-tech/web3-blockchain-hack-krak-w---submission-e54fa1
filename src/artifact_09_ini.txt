@@ -1,7 +1,7 @@
 PROGRAM_ID="WawL7v8n2r5g4vG8QWv7kK8R1a9B4zXo5j7y2E4C3bA"
 SOLANA_RPC_URL="https://api.devnet.solana.com"
 SOLANA_WS_URL="wss://api.devnet.solana.com"
-RESEND_API_KEY="re_1234567890abcdef"
+RESEND_API_KEY="re_test_000000000000000000000000"
 SLACK_WEBHOOK_URL="https://api.example.com/webhooks/alerts/placeholder"
 ALERT_EMAIL_TO="secops@enterprise-protocol.io"
 PORT=8080

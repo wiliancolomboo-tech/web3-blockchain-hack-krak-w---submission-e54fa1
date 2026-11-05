@@ -1,5 +1,5 @@
 SOLANA_RPC_URL=https://api.devnet.solana.com
 KRAKPAY_PROGRAM_ID=Krak111111111111111111111111111111111111111
-RESEND_API_KEY=re_enterprise_live_key_9988776655
+RESEND_API_KEY=re_test_000000000000000000000000
 SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
 AUDIT_EMAIL=accounting-audit@enterprise-corp.xyz

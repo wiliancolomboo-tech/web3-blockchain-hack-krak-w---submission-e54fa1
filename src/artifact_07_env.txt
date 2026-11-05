@@ -2,6 +2,6 @@ PORT=8080
 SOLANA_RPC_WS=wss://api.devnet.solana.com
 SOLANA_RPC_HTTP=https://api.devnet.solana.com
 PROGRAM_ID=KRAKCvQ86Wc4v9k9h9R1fS44mK8oWqgKrakowHack111
-RESEND_API_KEY=re_live_enterprise_secret_key
+RESEND_API_KEY=re_test_000000000000000000000000
 DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
 ENTERPRISE_NOTIFICATION_EMAIL=tax-compliance@krakflow.io

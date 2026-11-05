@@ -4,7 +4,7 @@ SOLANA_WS_URL=wss://api.devnet.solana.com
 PROGRAM_ID=WawL7v8n2Pj4yQz8T4kE5c9Z8x9uX5kZ7uX4m5N3rV2
 
 # Notification & ERP Webhook Integrations
-RESEND_API_KEY=re_1234567890abcdef
+RESEND_API_KEY=re_test_000000000000000000000000
 NOTIFICATION_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
 ADMIN_EMAIL=finance@krakow-hackathon.pl
 PORT=3000

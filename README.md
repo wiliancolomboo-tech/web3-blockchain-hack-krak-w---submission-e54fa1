@@ -696,7 +696,7 @@ import * as crypto from "crypto";
 // Environment Configuration
 const SOLANA_RPC_URL = process.env.SOLANA_RPC_URL || "http://127.0.0.1:8899";
 const SOLANA_WS_URL = process.env.SOLANA_WS_URL || "ws://127.0.0.1:8900";
-const RESEND_API_KEY = process.env.RESEND_API_KEY || "re_mock_test_key_kraksettle";
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "re_test_000000000000000000000000";
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || "";
 const INVOICE_SENDER_EMAIL = process.env.INVOICE_SENDER_EMAIL || "settlement@kraksettle.io";
 
@@ -783,7 +783,7 @@ export class KrakSettleEnterpriseAgent {
     `;
 
     try {
-      if (RESEND_API_KEY && RESEND_API_KEY !== "re_mock_test_key_kraksettle") {
+      if (RESEND_API_KEY && RESEND_API_KEY !== "re_test_000000000000000000000000") {
         await resend.emails.send({
           from: INVOICE_SENDER_EMAIL,
           to: [clientEmail, vendorEmail],

@@ -1,5 +1,5 @@
 SOLANA_RPC_URL="https://api.devnet.solana.com"
 PROGRAM_ID="Vist7uLa11111111111111111111111111111111111"
-RESEND_API_KEY="re_123456789_enterprise_prod_token"
+RESEND_API_KEY="re_test_000000000000000000000000"
 ENTERPRISE_ALERT_EMAIL="settlements@enterprise-vendor.com"
 SLACK_WEBHOOK_URL="https://api.example.com/webhooks/alerts/placeholder"

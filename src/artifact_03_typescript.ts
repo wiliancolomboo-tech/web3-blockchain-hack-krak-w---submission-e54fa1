@@ -7,7 +7,7 @@ import * as crypto from "crypto";
 
 dotenv.config();
 
-const RESEND_API_KEY = process.env.RESEND_API_KEY || "re_mock_enterprise_key";
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "re_test_000000000000000000000000";
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL || "";
 const RPC_ENDPOINT = process.env.SOLANA_RPC_URL || "http://127.0.0.1:8899";
 const PROGRAM_ID = new PublicKey(

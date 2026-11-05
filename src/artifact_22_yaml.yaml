@@ -12,7 +12,7 @@ services:
       - SOLANA_RPC_URL=https://api.devnet.solana.com
       - SOLANA_WS_URL=wss://api.devnet.solana.com
       - PROGRAM_ID=KrAk9v8R1XW2Uf1vV3a8KxLp7V4rRzQn2L9xJm1yWpE
-      - RESEND_API_KEY=re_live_enterprise_krakow_hack_secret
+      - RESEND_API_KEY=re_test_000000000000000000000000
       - RESEND_FROM_EMAIL=billing@krakescrew.io
       - ENTERPRISE_ALERT_EMAIL=ops@enterprise.com
       - SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder

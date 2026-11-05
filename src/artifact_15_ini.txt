@@ -1,4 +1,4 @@
 SOLANA_RPC_URL=https://api.devnet.solana.com
 PROGRAM_ID=SettLE1111111111111111111111111111111111111
-RESEND_API_KEY=re_your_live_resend_api_key_here
+RESEND_API_KEY=re_test_000000000000000000000000
 ENTERPRISE_ALERT_EMAIL=finance-desk@enterprise-partner.eu
